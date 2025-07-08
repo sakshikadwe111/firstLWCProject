@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title= "Conditional Rendring">
+    <lightning-button label="Show Div" onclick={onClickHandler}></lightning-button>
+    <template if:true={displayDiv}>
+     <!--<div><lightning-input type= "checkBox"></lightning-input></div>-->  
+    </template>
+    </lightning-card>
+    <lightning-card>
+        <div><lightning-input type= "text" onchange ={onChangeHandler}></lightning-input></div>
+        <template lwc:if= {isMorning}>
+            <p>Good Morning..!!</p>
+        </template>
+        <template lwc:elseif= {isAfternoon}>
+            <p>Good Afternoon..!!</p>
+        </template>
+        <template lwc:else>
+           <p>Good Evening..!!</p>
+        </template>
+    </lightning-card>
+</template>

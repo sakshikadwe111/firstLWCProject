@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Account" icon-name="standard:contact_list">
+        <div class="slds-m-around_medium">
+            <lightning-input label="InputBox" ></lightning-input>
+            <lightning-button variant="brand" label="Click" onclick={onClickhandler}></lightning-button>
+        <template if:true={wiredAccRecords.data}><!--why we written if:true here if wire caches proper data then displays the values-->
+            <template for:each={wiredAccRecords.data} for:item= "acc">
+                <p key={acc.Id}>{acc.Name}</p>
+            </template>
+            <template if:false={wiredAccRecords.data}>
+                {wiredAccRecords.error}>
+            </template>
+            <!--<template if:true={lstAccounts}>
+            <template for:each={lstAccounts} for:item= "acc">
+                <p key={acc.Id}>{acc.Name}</p>
+            </template>
+            <template if:false={lstAccounts}>
+                {error}
+            </template>-->
+        </template>
+    </div>
+    </lightning-card>
+</template>

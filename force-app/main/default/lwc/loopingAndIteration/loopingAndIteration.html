@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Looping And Iteration">
+        <lightning-input  label="show" onchange={onchangeHandler} value={addCity}></lightning-input>
+        <lightning-button label="Add value" onclick={onClickHandler}></lightning-button>
+        <h1>Example of forEach  Direcatives</h1>
+        <ul class="slds-m-around_medium">
+      <template for:each={cityList} for:item="city">
+        <p key ={City}>{city}</p> <!--for only deployment proccess we've to use key can reffere unique field like'Id' because keys take unique value-->
+      </template>
+       </ul>
+          <h1>Example of Iterator Direcatives</h1>
+            <ul class="slds-m-around_medium">
+       <template iterator:it={cityList}><!-- iterator:it we can replace this 'it' with any name it can we anything like name value like this-->
+                <template if:true={it.first}>
+                    <p key={it.value}>[First] {it.value}</p>
+                </template>
+                <p key={it.value}>{it.value}</p>
+                <template if:true={it.last}>
+                    <p key={it.value}>[Last] {it.value}</p>
+                </template>
+            </template>
+    
+    </ul>
+    </lightning-card>
+</template>
+
+ 

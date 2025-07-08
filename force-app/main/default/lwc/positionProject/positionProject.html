@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="New Position">
+        <div class="slds-p-around_medium">
+             
+            <div class="slds-align_absolute-center slds-m-bottom_medium">
+                <lightning-button label="Save" variant="neutral" onclick={handleSave}></lightning-button>
+                <lightning-button label="Save & New" class="slds-m-left_small" variant="neutral" onclick={handleSaveAndNew}></lightning-button>
+                <lightning-button label="Cancel" class="slds-m-left_small" variant="neutral" onclick={handleCancel}></lightning-button>
+            </div>
+               <div class="slds-text-heading_medium slds-border_bottom slds-p-bottom_x-small">
+            Information
+        </div>
+            <lightning-input label="Position Title" name="positionTitle" required value={positionTitle} onchange={handleChange}></lightning-input>
+            <lightning-combobox label="Status" name="status" value={status} options={statusOptions} onchange={handleChange}></lightning-combobox>
+            <lightning-combobox label="Type" name="type" value={type} options={typeOptions} onchange={handleChange}></lightning-combobox>
+            <lightning-combobox label="Functional Area" name="functionalArea" value={functionalArea} options={areaOptions} onchange={handleChange}></lightning-combobox>
+            <lightning-combobox label="Job Level" name="jobLevel" value={jobLevel} options={levelOptions} onchange={handleChange}></lightning-combobox>
+           
+            
+            <lightning-input label="Location" name="location" value={location} onchange={handleChange}></lightning-input>
+            <lightning-input type="date" label="Open Date" name="openDate" value={openDate} onchange={handleChange}></lightning-input>
+            <lightning-input type="date" label="Hire By" name="hireBy" value={hireBy} onchange={handleChange}></lightning-input>
+            <lightning-input type="date" label="Close Date" name="closeDate" value={closeDate} onchange={handleChange}></lightning-input>
+
+         <div class="slds-text-heading_medium slds-border_bottom slds-p-bottom_x-small">
+               Compensation 
+        </div>
+            <lightning-input type="number" label="Min Pay" name="minPay" value={minPay} onchange={handleChange}></lightning-input>
+            <lightning-input type="number" label="Max Pay" name="maxPay" value={maxPay} onchange={handleChange}></lightning-input>
+
+            <div class="slds-text-heading_medium slds-border_bottom slds-p-bottom_x-small">
+               Description   
+        </div>
+            <lightning-textarea label="Job Description" name="jobDescription" value={jobDescription} onchange={handleChange}></lightning-textarea>
+            <lightning-textarea label="Responsibilities" name="responsibilities" value={responsibilities} onchange={handleChange}></lightning-textarea>
+            <lightning-textarea label="Skills Required" name="skillsRequired" value={skillsRequired} onchange={handleChange}></lightning-textarea>
+            <lightning-textarea label="Educational Requirements" name="educationalRequirements" value={educationalRequirements} onchange={handleChange}></lightning-textarea>
+        </div>
+    </lightning-card>
+</template>

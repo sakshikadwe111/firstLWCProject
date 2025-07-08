@@ -1,0 +1,28 @@
+<template>
+   <lightning-card title="Students Info parent">
+    <lightning-layout multiple-rows><!--decrative approch-->
+            <lightning-layout-item size="8">
+                <lightning-input label="Name" name="Name" value={name} onchange={onChangeHandler}></lightning-input>
+                <lightning-input type="Number" label="Age" name="age"  value={age} onchange={onChangeHandler}></lightning-input>
+                <lightning-input type="Number" label="RollNumber" name="rollnumber" value={rollnumber} onchange={onChangeHandler}></lightning-input>
+                <lightning-button label="Enter" variant="brand" onclick={onClickhandler}></lightning-button>
+                    <ul>
+                        <template for:each={studentsInfoParent} for:item="stud">
+                            <li key={stud.rollnumber}>
+                                    <c-students-info-child students-info={stud} ontileclick={onTileClickHandler}></c-students-info-child>
+                                </li>
+                        </template>
+                        <li>name</li>
+                    </ul>
+            </lightning-layout-item>
+            <lightning-layout-item size="4">
+                <template if:true={selectedStudentInfo}>
+                <p><strong>you've selected:</strong></p>
+                <p><strong>Name:</strong>{selectedStudentInfo.name}</p>
+                  <p><strong>age:</strong>{selectedStudentInfo.age}</p>
+                  <p><strong>rollNumber:</strong>{selectedStudentInfo.rollnumber}</p>
+                  </template>
+            </lightning-layout-item>
+    </lightning-layout>
+   </lightning-card>
+</template>

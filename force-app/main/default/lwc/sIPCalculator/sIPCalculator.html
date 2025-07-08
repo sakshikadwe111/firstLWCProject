@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="SIP Calculator">
+        <div class="slds-p-around_medium">
+            <lightning-input type="range" label="Monthly Investment (₹)" name="monthlyInvestment" 
+                min="1000" max="100000" step="1000" value={monthlyInvestment} onchange={handleChange}>
+            </lightning-input>
+            <p>₹ {monthlyInvestment}</p>
+
+            <lightning-input type="range" label="Expected Return Rate (p.a)" name="annualReturn"
+                min="1" max="20" step="1" value={annualReturn} onchange={handleChange}>
+            </lightning-input>
+            <p>{annualReturn}%</p>
+
+            <lightning-input type="range" label="Time Period (Years)" name="timePeriod"
+                min="1" max="30" step="1" value={timePeriod} onchange={handleChange}>
+            </lightning-input>
+            <p>{timePeriod} Yr</p>
+
+            <div class="slds-m-top_medium">
+                <p><strong>Invested Amount:</strong> ₹{investedAmount}</p>
+                <p><strong>Est. Returns:</strong> ₹{estimatedReturns}</p>
+                <p><strong>Total Value:</strong> ₹{totalValue}</p>
+            </div>
+
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-button label="INVEST NOW" variant="brand"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
