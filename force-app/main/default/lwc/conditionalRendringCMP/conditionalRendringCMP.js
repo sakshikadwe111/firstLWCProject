@@ -8,6 +8,7 @@ export default class ConditionalRendringCMP extends LightningElement {
         }
         @track status = 'Morning';
         onChangeHandler(evt) {
+                console.log(evt.target.value);
             this.status = evt.target.value;
        }
 
